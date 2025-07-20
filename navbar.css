@@ -1,0 +1,26 @@
+.navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color:rgb(218, 181, 253)
+}
+
+.form-control {
+    background-color:#b3abff;
+    color: #8477fd;
+}
+
+.btn-outline-success {
+    border-color: #8477fd;
+    color: #8477fd;
+}
+
+.btn-outline-success:hover {
+    background-color: #8477fd;
+    color: white;
+}
+
+.nav-item {
+    font-family: 'Poppins', sans-serif;
+    color: #c887f3;
+}

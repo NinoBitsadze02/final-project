@@ -1,0 +1,17 @@
+#movie-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.img-fluid {
+    height: 500px;
+    width: 300px;
+    object-fit: cover;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+}

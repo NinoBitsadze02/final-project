@@ -1,0 +1,28 @@
+.card, .card-img-top, .col-md-3 {
+    border-radius: 25px;
+}
+.card {
+    font-family: 'Poppins', sans-serif;
+    padding: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0);
+    font-size: 1.3rem;
+    font-weight: 600;
+    background-color:#c887f3;
+}
+
+.card:hover {
+    box-shadow: 0 0 15px #680091;
+
+}
+
+#recent-movies {
+    margin: 10px 0;
+}
+
+.container h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #c887f3;
+}
+

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="navbar.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav id="main-navbar" class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <div class="d-flex align-items-center w-100 justify-content-between">
+                        <a class="navbar-brand" href="index.html">PicAMovie</a>
+                        <form id="search-form" class="d-flex mx-auto" role="search">
+                            <input id="search-input" class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="d-flex align-items-center ms-auto">
+                            <ul class="navbar-nav mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="movies.html">Popular</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Genres</a>
+                                <ul class="dropdown-menu" id="dropdown-menu">
+                                </ul>
+                                </li>
+                            </ul>
+                            <div class="dropdown ms-3">
+                                <img src="avatar.jpg" class="rounded-circle" style="width: 40px; height: 40px; cursor: pointer;" data-bs-toggle="dropdown" />
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li class="dropdown-item">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="darkModeToggle">
+                                            <label class="form-check-label" for="darkModeToggle">Dark Mode</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>                   
+                    </div>
+                </div>
+                </nav>
+        </div>
+<script>
+  setTimeout(() => {
+    const form = document.getElementById("search-form");
+    const input = document.getElementById("search-input");
+    if (form && input) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const query = input.value.trim();
+        if (query) {
+          window.location.href = `movies.html?search=${encodeURIComponent(query)}`;
+        }
+      });
+    } else {
+      console.warn("Search form or input not found in navbar.");
+    }
+  }, 100);
+</script>
+<script>
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      const toggle = document.getElementById("darkModeToggle");
+      if (!toggle) {
+        console.warn("Dark mode toggle not found.");
+        return;
+      }
+      const isDark = localStorage.getItem("darkMode") === "true";
+      toggle.checked = isDark;
+      applyDarkMode(isDark);
+      toggle.addEventListener("change", () => {
+        localStorage.setItem("darkMode", toggle.checked);
+        applyDarkMode(toggle.checked);
+      });
+    }, 100);
+  });
+  function applyDarkMode(isDark) {
+    if (isDark) {
+      document.body.classList.add("bg-dark", "text-white");
+      document.body.classList.remove("bg-light", "text-dark");
+    } else {
+      document.body.classList.add("bg-light", "text-dark");
+      document.body.classList.remove("bg-dark", "text-white");
+    }
+  }
+</script>
+</body>
+</html>
